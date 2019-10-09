@@ -4,7 +4,7 @@
 
 ## Implemented Features
 
-- BW devs can view the latest football standings
+- :ballot_box_with_check: BW devs can view the latest football standings
 
 ## Project Management
 
@@ -12,4 +12,4 @@
 
 ## Angular CLI Version
 
-This project was generated with Angular CLI version 8.3.8.
+:heart_decoration: This project was generated with Angular CLI version 8.3.8.
