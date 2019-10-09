@@ -6,6 +6,10 @@
 
 - BW devs can view the latest football standings
 
+## Project Management
+
+:briefcase: This project is managed on Pivotal Tracker [here](https://www.pivotaltracker.com/n/projects/2403959)
+
 ## Angular CLI Version
 
 This project was generated with Angular CLI version 8.3.8.
