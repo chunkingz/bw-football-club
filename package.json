@@ -7,18 +7,29 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "serve": "serve",
+    "postinstall": "ng build --prod"
   },
   "private": true,
+  "engines": {
+    "node": "10.15.3",
+    "npm": "6.10.3"
+  },
   "dependencies": {
     "@angular/animations": "~8.2.9",
     "@angular/common": "~8.2.9",
     "@angular/compiler": "~8.2.9",
     "@angular/core": "~8.2.9",
     "@angular/forms": "~8.2.9",
+    "@angular/material": "^8.2.2",
     "@angular/platform-browser": "~8.2.9",
     "@angular/platform-browser-dynamic": "~8.2.9",
     "@angular/router": "~8.2.9",
+    "@ng-bootstrap/ng-bootstrap": "^5.1.1",
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "ngx-bootstrap": "^5.1.2",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
