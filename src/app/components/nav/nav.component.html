@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand header-style-home" (click)="collapse()" routerLink="/">
+          <i class="fas fa-futbol"></i>
+          BW Football Club
+        </a>
+        <button class="navbar-toggler" (click)="isCollapsed = !isCollapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div [ngbCollapse]="isCollapsed" class="collapse navbar-collapse" id="navbarCollapse">
+      
+          <ul class="navbar-nav mr-auto mx-auto">
+            
+            <li class="nav-item">
+              <a class="nav-link" (click)="collapse()" routerLink="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="collapse()" routerLink="/news">News</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="collapse()" routerLink="/about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="collapse()" routerLink="/contact">Contact us</a>
+            </li>
+      
+            <li ngbDropdown class="nav-item dropdown">
+              <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                More
+              </a>
+              <div ngbDropdownMenu (click)="collapse()" class="dropdown-menu" aria-labelledby="dropdown01">
+                <a ngbDropdownItem class="dropdown-item" routerLink="/donate"><i class="fas fa-donate" style="color: blue;"></i> Donate</a>
+                <a ngbDropdownItem class="dropdown-item" routerLink="/results"><i class="fas fa-poll" style="color: brown;"></i> Results</a>
+                <a ngbDropdownItem class="dropdown-item" routerLink="/tables"><i class="fas fa-table" style="color: fuchsia;"></i> Tables</a>
+                <a ngbDropdownItem class="dropdown-item" routerLink="/tips"><i class="fas fa-lightbulb" style="color: rgb(241, 76, 76);"></i> Tips</a>
+                <a ngbDropdownItem class="dropdown-item" routerLink="/features"><i class="fa fa-free-code-camp" style="color: blueviolet;"></i> Features</a>
+              </div>
+            </li>
+      
+          </ul>
+      
+          <form class="form-inline my-2 my-lg-0">
+      
+            <a class="nav-link signup" routerLink="/signup"><i class="fa fa-lock"></i> Signup</a>
+            or
+            <a class="nav-link login" routerLink="/login">Login</a>
+          </form>
+      
+        </div>
+      </nav>
