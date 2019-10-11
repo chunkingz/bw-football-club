@@ -2,13 +2,15 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~font-awesome/css/font-awesome.css";
 
+$primary-color: #FDC624;
 
 body{
     font-family: roboto;
+    max-width: 1440px !important;
 }
 
 .container1{
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 // @media only screen and (max-width: 991px) {
@@ -42,9 +44,9 @@ ul > li > a.nav-link {
 }
 
 ul > li > a.nav-link:hover {
-    background: #600;
+    background: $primary-color;
     // box-shadow: 1px 1px 1px;
-    color: white;
+    color: black !important;
     padding: 10px;
     border-radius: 10px;
 }

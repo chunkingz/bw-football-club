@@ -14,9 +14,26 @@
             <li class="nav-item">
               <a class="nav-link" (click)="collapse()" routerLink="/">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" (click)="collapse()" routerLink="/news">News</a>
-            </li>
+            <li ngbDropdown class="nav-item dropdown">
+                <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Competitions
+                </a>
+                <div ngbDropdownMenu (click)="collapse()" class="dropdown-menu" aria-labelledby="dropdown01">
+                  <a ngbDropdownItem class="dropdown-item" routerLink="/"><i class="fas fa-futbol" style="color: blue;"></i> EPL</a>
+                  <a ngbDropdownItem class="dropdown-item" routerLink="/"><i class="fas fa-futbol" style="color: brown;"></i> LA LIGA</a>
+                  <a ngbDropdownItem class="dropdown-item" routerLink="/"><i class="fas fa-futbol" style="color: fuchsia;"></i> BRAZIL SERIE A</a>
+                  <a ngbDropdownItem class="dropdown-item" routerLink="/"><i class="fas fa-futbol" style="color: rgb(241, 76, 76);"></i> UCL</a>
+                  <a ngbDropdownItem class="dropdown-item" routerLink="/"><i class="fa fa-futbol" style="color: blueviolet;"></i> UEFA Super Cup</a>
+                  <a ngbDropdownItem class="dropdown-item" routerLink="/"><i class="fa fa-futbol" style="color: blue;"></i> FIFA World Cup</a>
+                  <a ngbDropdownItem class="dropdown-item" routerLink="/"><i class="fas fa-futbol" style="color: brown;"></i> England Championship</a>
+                  <a ngbDropdownItem class="dropdown-item" routerLink="/"><i class="fas fa-futbol" style="color: fuchsia;"></i> UEFA European Championship</a>
+                  <a ngbDropdownItem class="dropdown-item" routerLink="/"><i class="fas fa-futbol" style="color: rgb(241, 76, 76);"></i> ITALY SERIE A</a>
+                  <a ngbDropdownItem class="dropdown-item" routerLink="/"><i class="fas fa-futbol" style="color: blueviolet;"></i> FRANCE LIGUE 1</a>
+                  <a ngbDropdownItem class="dropdown-item" routerLink="/"><i class="fa fa-futbol" style="color: blue;"></i> GERMAN BUNDESLIGA</a>
+                  <a ngbDropdownItem class="dropdown-item" routerLink="/"><i class="fa fa-futbol" style="color: brown;"></i> Netherlands Eredivisie</a>
+                  <a ngbDropdownItem class="dropdown-item" routerLink="/"><i class="fa fa-futbol" style="color: fuchsia;"></i> Portugal Primeira Liga</a>
+                </div>
+              </li>
             <li class="nav-item">
                 <a class="nav-link" (click)="collapse()" routerLink="/about">About</a>
             </li>
@@ -34,6 +51,8 @@
                 <a ngbDropdownItem class="dropdown-item" routerLink="/tables"><i class="fas fa-table" style="color: fuchsia;"></i> Tables</a>
                 <a ngbDropdownItem class="dropdown-item" routerLink="/tips"><i class="fas fa-lightbulb" style="color: rgb(241, 76, 76);"></i> Tips</a>
                 <a ngbDropdownItem class="dropdown-item" routerLink="/features"><i class="fa fa-free-code-camp" style="color: blueviolet;"></i> Features</a>
+                <a ngbDropdownItem class="dropdown-item" routerLink="/donate"><i class="fas fa-newspaper" style="color: green;"></i> News</a>
+
               </div>
             </li>
       
@@ -48,3 +67,5 @@
       
         </div>
       </nav>
+
+<br><br><br>

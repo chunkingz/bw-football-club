@@ -2,3 +2,63 @@
     width: 60%;
     margin: auto;
 }
+
+.leagues-sub-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.leagues-sub-head > div {
+    // margin: 10px;
+    padding: 0 25px 0 25px;
+    font-size: 24px;
+    // border: 1px solid gray;
+    border-left: 1px solid #ddd;
+}
+
+.leagues-sub-head > div:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #FDC624;
+    font-weight: bold;
+}
+
+.leagues-sub-head > div:last-child {
+    border-right: 1px solid #ddd;
+}
+
+.image-banner {
+    -webkit-filter: grayscale(90%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(90%);
+    position: relative;
+    text-align: center;
+    color: white;
+    // width: 500px;
+}
+
+.image-banner > img {
+    width: 100%;
+}
+
+.image-banner > h1 {
+    background: linear-gradient(359.71deg, #FFFFFF -164.45%, rgba(255, 255, 255, 0) 17.36%), rgba(33, 35, 44, 0.9);
+    mix-blend-mode: luminosity;
+    width: 100%;
+    height: 100%;
+    padding-top: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+@media only screen and (max-width: 533px) {
+    .leagues-sub-head {
+        flex-direction: column;
+    }
+}

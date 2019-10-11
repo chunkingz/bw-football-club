@@ -1,7 +1,28 @@
-<main role="main">
-<section class="text-center container1">
+<main role="main" id="top">
 
-    <h1>TABLE</h1>
+<ngx-spinner
+    bdColor="rgba(51,51,51,0.8)"
+    size="medium"
+    color="#fff"
+    type="ball-scale-multiple">
+    <p class="text-center" style="font-size: 20px; color: white">Loading Football Data...</p>
+</ngx-spinner>
+
+<div class="leagues-sub-head">
+    <div (click)="EPL()"> EPL </div>
+    <div (click)="laLiga()">LA LIGA</div>
+    <div (click)="ItalySerieA()">SERIE A</div>
+    <div (click)="UCL()">UCL</div>
+    <div (click)="EnglandChampionship()">CHAMPIONSHIP</div>
+    <div (click)="FIFAWorldCup()">WORLD CUP</div>
+</div>
+
+<div class="image-banner">
+    <img src="assets/wallpaper-1846931.png" alt="image-banner">
+    <h1> {{teams.competition.area.name}} - {{teams.competition.name}} </h1>
+</div>
+
+<section class="text-center container1">
 
 </section>
 
@@ -12,7 +33,7 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Team</th>
-            <th scope="col">Games Played</th>
+            <th scope="col">Played</th>
             <th scope="col">Points</th>
             <th scope="col">Won</th>
             <th scope="col">Drawn</th>
@@ -23,16 +44,27 @@
         </tr>
     </thead>
     <tbody>
-        <!-- <tr *ngFor="let team of teams; index as i">
+        <tr *ngFor="let team of teams1; index as i">
             <th scope="row">{{ i + 1 }}</th>
             <td>
-            <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
-            {{ country.name }}
+            <img src={{team.team.crestUrl}} class="mr-2" style="width: 20px">
+            {{ team.team.name }}
             </td>
-            <td>{{ country.area | number }}</td>
-            <td>{{ country.population | number }}</td>
-        </tr> -->
+            <td>{{ team.playedGames }}</td>
+            <td>{{ team.points }}</td>
+            <td>{{ team.won }}</td>
+            <td>{{ team.draw }}</td>
+            <td>{{ team.lost }}</td>
+            <td>{{ team.goalsFor }}</td>
+            <td>{{ team.goalsAgainst }}</td>
+            <td>{{ team.goalDifference }}</td>
+        </tr>
     </tbody>
     </table>
 </section>
 </main>
+
+
+<br><br>
+
+<app-footer></app-footer>
