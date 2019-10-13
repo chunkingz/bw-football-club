@@ -1,10 +1,12 @@
+<div class="container py-5">
+
 <main role="main" id="top">
 
 <ngx-spinner
     bdColor="rgba(51,51,51,0.8)"
     size="medium"
     color="#fff"
-    type="ball-scale-multiple">
+    type="line-scale">
     <p class="text-center" style="font-size: 20px; color: white">Loading Football Data...</p>
 </ngx-spinner>
 
@@ -19,7 +21,7 @@
 
 <div class="image-banner">
     <img src="assets/wallpaper-1846931.png" alt="image-banner">
-    <h1> {{teams.competition.area.name}} - {{teams.competition.name}} </h1>
+    <h1> {{competitionAreaName}} - {{competitionName}} </h1>
 </div>
 
 <section class="text-center container1">
@@ -28,43 +30,84 @@
 
 <section>
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Team</th>
-            <th scope="col">Played</th>
-            <th scope="col">Points</th>
-            <th scope="col">Won</th>
-            <th scope="col">Drawn</th>
-            <th scope="col">Lost</th>
-            <th scope="col">GF</th>
-            <th scope="col">GA</th>
-            <th scope="col">GD</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let team of teams1; index as i">
-            <th scope="row">{{ i + 1 }}</th>
-            <td>
-            <img src={{team.team.crestUrl}} class="mr-2" style="width: 20px">
-            {{ team.team.name }}
-            </td>
-            <td>{{ team.playedGames }}</td>
-            <td>{{ team.points }}</td>
-            <td>{{ team.won }}</td>
-            <td>{{ team.draw }}</td>
-            <td>{{ team.lost }}</td>
-            <td>{{ team.goalsFor }}</td>
-            <td>{{ team.goalsAgainst }}</td>
-            <td>{{ team.goalDifference }}</td>
-        </tr>
-    </tbody>
-    </table>
+    <div class="text-center display-4" *ngIf="!teamsStandingTable"> No data to display </div>
+
+    <div *ngIf="teams.competition.id == 2001">
+        <div class="text-center display-4"> UCL DATA </div>
+        <table class="table table-striped table-responsive-lg table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Team</th>
+                        <th scope="col">Played</th>
+                        <th scope="col">Points</th>
+                        <th scope="col">Won</th>
+                        <th scope="col">Drawn</th>
+                        <th scope="col">Lost</th>
+                        <th scope="col">GF</th>
+                        <th scope="col">GA</th>
+                        <th scope="col">GD</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let team of teamsStandingTable; index as i">
+                        <th scope="row">{{ i + 1 }}</th>
+                        <td>
+                        <img src={{team.team.crestUrl}} class="mr-2" style="width: 20px">
+                        {{ team.team.name }}
+                        </td>
+                        <td>{{ team.playedGames }}</td>
+                        <td>{{ team.points }}</td>
+                        <td>{{ team.won }}</td>
+                        <td>{{ team.draw }}</td>
+                        <td>{{ team.lost }}</td>
+                        <td>{{ team.goalsFor }}</td>
+                        <td>{{ team.goalsAgainst }}</td>
+                        <td>{{ team.goalDifference }}</td>
+                    </tr>
+                </tbody>
+            </table>      
+    </div>
+
+    <div *ngIf="teamsStandingTable && teams.competition.id != 2001">
+        <table class="table table-striped table-responsive-lg table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Team</th>
+                    <th scope="col">Played</th>
+                    <th scope="col">Points</th>
+                    <th scope="col">Won</th>
+                    <th scope="col">Drawn</th>
+                    <th scope="col">Lost</th>
+                    <th scope="col">GF</th>
+                    <th scope="col">GA</th>
+                    <th scope="col">GD</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let team of teamsStandingTable; index as i">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>
+                    <img src={{team.team.crestUrl}} class="mr-2" style="width: 20px">
+                    {{ team.team.name }}
+                    </td>
+                    <td>{{ team.playedGames }}</td>
+                    <td>{{ team.points }}</td>
+                    <td>{{ team.won }}</td>
+                    <td>{{ team.draw }}</td>
+                    <td>{{ team.lost }}</td>
+                    <td>{{ team.goalsFor }}</td>
+                    <td>{{ team.goalsAgainst }}</td>
+                    <td>{{ team.goalDifference }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 </section>
 </main>
 
-
-<br><br>
+</div>
 
 <app-footer></app-footer>

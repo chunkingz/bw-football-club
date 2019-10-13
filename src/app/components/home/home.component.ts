@@ -10,8 +10,10 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class HomeComponent implements OnInit {
 
   teams: any;
-  teams1: any;
-  teamIcon: any;
+  teamsStandingTable: any;
+  competitionName: any;
+  competitionAreaName: any;
+  UCLGroup: any;
 
   constructor(private data: DataService, private spinner: NgxSpinnerService) { }
 
@@ -25,10 +27,11 @@ export class HomeComponent implements OnInit {
 
   result(res) {
     this.teams = res;
-    this.teams1 = this.teams.standings[0].table;
+    this.teamsStandingTable = this.teams.standings[0].table;
+    this.competitionName = this.teams.competition.name;
+    this.competitionAreaName = this.teams.competition.area.name;
     console.log(this.teams);
     console.log(this.teams.competition.name);
-    // console.log(this.teams1);
 
     // when the api call completes, hide the loader
     setTimeout(() => {
@@ -56,7 +59,24 @@ export class HomeComponent implements OnInit {
 
   UCL() {
     this.data.getUCL().subscribe(res => {
-      return this.result(res);
+      this.teams = res;
+      for (let i = 0; i < 25; i += 3 ) {
+        // this.teamsStandingTable = this.teams.standings[i].table;
+        // this.UCLGroup = this.teams.standings[i].group;
+      }
+      this.teamsStandingTable = this.teams.standings[21].table;
+      this.UCLGroup = this.teams.standings[0].group;
+      this.competitionName = this.teams.competition.name;
+      this.competitionAreaName = this.teams.competition.area.name;
+      console.log(this.teams);
+      console.log(this.teamsStandingTable);
+      console.log(this.competitionName);
+      console.log(this.UCLGroup);
+
+      // when the api call completes, hide the loader
+      setTimeout(() => {
+        this.spinner.hide();
+      }, 1000);
     });
   }
 
