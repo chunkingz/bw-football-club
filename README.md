@@ -5,6 +5,18 @@
 ## Implemented Features
 
 - :ballot_box_with_check: BW devs can view the latest football standings
+- Added loader to notify users when a request is still on going.
+- Tuned up the User Interface.
+- Created a more user friendly mobile view.
+- Upgraded to the latest angular v8 and whole lot more!
+
+## Urls (Hosting)
+
+:gem: This project is hosted on Heroku [here](https://byteworks-football.herokuapp.com/)
+
+:fire: Coming soon...
+
+:octocat: Github Pages coming soon...
 
 ## Project Management
 
