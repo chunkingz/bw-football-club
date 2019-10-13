@@ -13,12 +13,6 @@ body{
     margin-top: 50px;
 }
 
-// @media only screen and (max-width: 991px) {
-//     .container1{
-//         margin-top: 100px;
-//     }
-//   }
-
 @media only screen and (max-width: 768px) {
     .container1{
         margin-top: 80px;
@@ -39,13 +33,12 @@ a {
     }
 
 ul > li > a.nav-link {
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 }
 
 ul > li > a.nav-link:hover {
     background: $primary-color;
-    // box-shadow: 1px 1px 1px;
     color: black !important;
     padding: 10px;
     border-radius: 10px;

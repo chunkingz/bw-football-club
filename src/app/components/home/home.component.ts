@@ -13,7 +13,8 @@ export class HomeComponent implements OnInit {
   teamsStandingTable: any;
   competitionName: any;
   competitionAreaName: any;
-  UCLGroup: any;
+
+  UCLTeamsStandings: any;
 
   constructor(private data: DataService, private spinner: NgxSpinnerService) { }
 
@@ -25,13 +26,16 @@ export class HomeComponent implements OnInit {
     this.EPL();
   }
 
+  /**
+   * Fetches the results, returns it, and stops the loader
+   * @param res - returned response
+   */
   result(res) {
     this.teams = res;
+    this.UCLTeamsStandings = this.teams.standings;
     this.teamsStandingTable = this.teams.standings[0].table;
     this.competitionName = this.teams.competition.name;
     this.competitionAreaName = this.teams.competition.area.name;
-    console.log(this.teams);
-    console.log(this.teams.competition.name);
 
     // when the api call completes, hide the loader
     setTimeout(() => {
@@ -39,59 +43,63 @@ export class HomeComponent implements OnInit {
     }, 1000);
   }
 
+  /**
+   * Fetches English Premier League Standings
+   */
   EPL() {
     this.data.getEPL().subscribe(res => {
       return this.result(res);
     });
   }
 
+  /**
+   * Fetches Spanish La Liga (Primera Division) Standings
+   */
   laLiga() {
     this.data.getSpanishPrimera().subscribe(res => {
       return this.result(res);
     });
   }
 
+  /**
+   * Fetches Italy Serie A Standings
+   */
   ItalySerieA() {
     this.data.getItalySerieA().subscribe(res => {
       return this.result(res);
     });
   }
 
+  /**
+   * Fetches UEFA Champions League Standings
+   */
   UCL() {
     this.data.getUCL().subscribe(res => {
-      this.teams = res;
-      for (let i = 0; i < 25; i += 3 ) {
-        // this.teamsStandingTable = this.teams.standings[i].table;
-        // this.UCLGroup = this.teams.standings[i].group;
-      }
-      this.teamsStandingTable = this.teams.standings[21].table;
-      this.UCLGroup = this.teams.standings[0].group;
-      this.competitionName = this.teams.competition.name;
-      this.competitionAreaName = this.teams.competition.area.name;
-      console.log(this.teams);
-      console.log(this.teamsStandingTable);
-      console.log(this.competitionName);
-      console.log(this.UCLGroup);
-
-      // when the api call completes, hide the loader
-      setTimeout(() => {
-        this.spinner.hide();
-      }, 1000);
+      return this.result(res);
     });
   }
 
+  /**
+   * Fetches UEFA Europian Champions Standings
+   */
   UEC() {
     this.data.getEuros().subscribe(res => {
       return this.result(res);
     });
   }
 
+  /**
+   * Fetches English Championship League Standings
+   */
   EnglandChampionship() {
     this.data.getEnglandChamp().subscribe(res => {
       return this.result(res);
     });
   }
 
+  /**
+   * Fetches FIFA World Cup Standings
+   */
   FIFAWorldCup() {
     this.data.getFIFAWorldCup().subscribe(res => {
       return this.result(res);
