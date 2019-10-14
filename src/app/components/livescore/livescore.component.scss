@@ -1,0 +1,18 @@
+.table {
+    margin: auto;
+    width: 80% !important; 
+ }
+
+@media only screen and (max-width: 990px) {
+    .table {
+        width: 50% !important;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .header1 {
+        font-size: 2.5rem;
+    }
+    .table {
+        width: 100% !important;
+    }
+}

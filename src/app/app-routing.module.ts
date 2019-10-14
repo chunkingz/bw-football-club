@@ -11,6 +11,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { TipsComponent } from './components/tips/tips.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { DonateComponent } from './components/donate/donate.component';
+import { LivescoreComponent } from './components/livescore/livescore.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'results', component: ResultsComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'tips', component: TipsComponent},
+  {path: 'livescore', component: LivescoreComponent},
   {path: '**', component: NotfoundComponent},
 ];
 

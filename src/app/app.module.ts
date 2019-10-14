@@ -22,6 +22,7 @@ import { TipsComponent } from './components/tips/tips.component';
 import { FeaturesComponent } from './components/features/features.component';
 import { DonateComponent } from './components/donate/donate.component';
 import { CompetitionsComponent } from './components/competitions/competitions.component';
+import { LivescoreComponent } from './components/livescore/livescore.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { CompetitionsComponent } from './components/competitions/competitions.co
     TipsComponent,
     FeaturesComponent,
     DonateComponent,
-    CompetitionsComponent
+    CompetitionsComponent,
+    LivescoreComponent
   ],
   imports: [
     BrowserModule,

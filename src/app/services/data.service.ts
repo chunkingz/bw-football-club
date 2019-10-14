@@ -11,10 +11,12 @@ export class DataService {
   constructor(private http: HttpClient) {
   }
 
-  getCompetition(teamId: number) {
-    const competition = `${this.url}/competitions/${teamId}/standings`;
+  getCompetition(teamId?: number, livescore?: boolean) {
+    const competition = livescore ? `${this.url}/matches` : `${this.url}/competitions/${teamId}/standings`;
     return this.http.get(competition, {headers: new HttpHeaders({'X-Auth-Token': 'ad2196b5f07c480b8d9421b59bd5d6cb'})});
   }
+
+  getLivescore() { return this.getCompetition(null, true); }
 
   getEPL() { return this.getCompetition(2021); }
 

@@ -1,0 +1,41 @@
+<div class="container py-5">
+
+    <main role="main" id="top">
+    
+    <ngx-spinner
+        bdColor="rgba(51,51,51,0.8)"
+        size="medium"
+        color="#fff"
+        type="line-scale">
+        <p class="text-center" style="font-size: 20px; color: white">Loading Livescore Data...</p>
+    </ngx-spinner>
+
+    <div class="text-center display-4 py-4 header1" *ngIf="totalMatchCount <= 0"> No data to display </div>
+    <div class="text-center display-4 py-4 header1" *ngIf="totalMatchCount > 0"> Matches today: {{totalMatchCount}} </div>
+    
+    <div>
+        <table class="table table-striped table-responsive-lg table-hover text-center">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Home Team</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Away Team</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let liveData of liveMatch; index as i">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ liveData.homeTeam.name }}</td>
+                    <td>{{ liveData.score.fullTime.homeTeam }} - {{liveData.score.fullTime.awayTeam}} </td>
+                    <td>{{ liveData.awayTeam.name }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</main>
+
+</div>
+
+<app-footer></app-footer>
